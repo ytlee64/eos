@@ -1,0 +1,58 @@
+1.6 Create Development Wallet -----------------------------------------------
+
+~/eos>cleos wallet create --to-console
+warn  2019-02-19T12:18:41.657 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /Users/ytlee64/eosio-wallet/./default.wallet
+Creating wallet: default
+Save password to use in the future to unlock this wallet.
+Without password imported keys will not be retrievable.
+
+"PW5JydkH7TPtyiaPpZKkrQE6n8Euc9bG3DSHNr1qJHf3z33ApFKdd"
+
+
+~/eos>cleos wallet create_key
+warn  2019-02-19T12:23:09.815 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /Users/ytlee64/eosio-wallet/./default.wallet
+Created new private key with a public key of: 
+
+
+"EOS7dGSejGb9yXtiKuWNtyGqPAEiq7dSdqGXS8x3pQ1scXWv86NMt"
+
+--signature-provider EOS7dGSejGb9yXtiKuWNtyGqPAEiq7dSdqGXS8x3pQ1scXWv86NMt=KEY:PW5JydkH7TPtyiaPpZKkrQE6n8Euc9bG3DSHNr1qJHf3z33ApFKdd \
+
+~/eos>cleos wallet import
+
+5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+
+private key: warn  2019-02-19T12:24:46.268 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /Users/ytlee64/eosio-wallet/./default.wallet
+imported private key for: 
+
+EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+
+--signature-provider EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 \
+
+
+2.1 Hello World! -----------------------------------------------
+
+
+~/eos>cleos create account eosio bob EOS7dGSejGb9yXtiKuWNtyGqPAEiq7dSdqGXS8x3pQ1scXWv86NMt 
+~/eos>cleos create account eosio alice EOS7dGSejGb9yXtiKuWNtyGqPAEiq7dSdqGXS8x3pQ1scXWv86NMt
+
+
+cleos create account eosio hello EOS7dGSejGb9yXtiKuWNtyGqPAEiq7dSdqGXS8x3pQ1scXWv86NMt -p eosio@active
+
+
+~/eos>cleos set contract hello ~/eos/hello -p hello@active
+Reading WASM from /Users/ytlee64/eos/hello/hello.wasm...
+Publishing contract...
+executed transaction: 3d6632cb4537e2b84f9bc0ecebba2346e407b87fa38d59e92f99e2e6c4ecfc44  1432 bytes  9968 us
+#         eosio <= eosio::setcode               {"account":"hello","vmtype":0,"vmversion":0,"code":"0061736d0100000001390b60027f7e006000017f60027f7f...
+#         eosio <= eosio::setabi                {"account":"hello","abi":"0e656f73696f3a3a6162692f312e31000102686900010475736572046e616d650100000000...
+warn  2019-02-19T12:37:09.110 thread-0  main.cpp:487                  print_resuwarning: transaction executed locally, but may not be confirmed by the network yet
+
+
+~/eos>cleos push action hello hi '["bob"]' -p bob@active
+executed transaction: 18e9fb7f33253dbea01160d98d84882cb33b93fd9f9c27eff70e5271392544ea  104 bytes  3288 us
+#         hello <= hello::hi                    {"user":"bob"}
+>> Hello, bob
+warn  2019-02-19T12:38:03.796 thread-0  main.cpp:487                  print_resuwarning: transaction executed locally, but may not be confirmed by the network yet
+
+

@@ -1,0 +1,84 @@
+yt@Ub:~/eosio-wallet$ ls
+config.ini  keosd.sock  nodeos.log  wallet.lock
+yt@Ub:~/eosio-wallet$ cleos wallet create --to-console
+warn  2019-02-19T11:38:18.406 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/yt/eosio-wallet/./default.wallet
+Creating wallet: default
+Save password to use in the future to unlock this wallet.
+Without password imported keys will not be retrievable.
+"PW5JMwMe81yYtFJR1nV3DsggwhG6KE5PtnDy8kj7oDBZRSVzzKnoJ"
+yt@Ub:~/eosio-wallet$ clear
+
+yt@Ub:~/eosio-wallet$ cleos wallet open
+Opened: default
+yt@Ub:~/eosio-wallet$ cleos wallet list
+Wallets:
+[
+  "default"
+]
+yt@Ub:~/eosio-wallet$ cleos wallet unlock
+password: Unlocked: default
+yt@Ub:~/eosio-wallet$ cleos wallet list
+Wallets:
+[
+  "default *"
+]
+yt@Ub:~/eosio-wallet$ cleos wallet create_key
+warn  2019-02-19T11:40:59.205 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/yt/eosio-wallet/./default.wallet
+Created new private key with a public key of: "EOS6Ej66s4pnt4wQNHv3MNQb53ozKdLTuLdYZUaJC9fMyu7k5PHYZ"
+yt@Ub:~/eosio-wallet$ 
+
+
+5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+yt@Ub:~/eosio-wallet$ cleos wallet import
+private key: warn  2019-02-19T11:43:59.367 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/yt/eosio-wallet/./default.wallet
+imported private key for: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
+
+---------------------------------------------------------------------------------------
+cleos create account eosio bob EOS6Ej66s4pnt4wQNHv3MNQb53ozKdLTuLdYZUaJC9fMyu7k5PHYZ 
+cleos create account eosio alice EOS6Ej66s4pnt4wQNHv3MNQb53ozKdLTuLdYZUaJC9fMyu7k5PHYZ
+
+
+yt@Ub:~$ cleos create account eosio bob1 EOS6Ej66s4pnt4wQNHv3MNQb53ozKdLTuLdYZUaJC9fMyu7k5PHYZ
+executed transaction: e07f60111904b0959a61c22449f20eb3634f30aef77ba691c7e5d4b3d8a19b45  200 bytes  173 us
+#         eosio <= eosio::newaccount            {"creator":"eosio","name":"bob1","owner":{"threshold":1,"keys":[{"key":"EOS6Ej66s4pnt4wQNHv3MNQb53oz...
+warn  2019-02-19T11:50:38.047 thread-0  main.cpp:487                  print_resuwarning: transaction executed locally, but may not be confirmed by the network yet
+
+
+yt@Ub:~$ cleos get account bob
+created: 2019-02-09T09:37:32.000
+permissions: 
+     owner     1:    1 EOS66r18VWCsEUNBQAHC5qQ97L6HCAhCC9EAx4BMZipPCX5Rft3ka
+        active     1:    1 EOS66r18VWCsEUNBQAHC5qQ97L6HCAhCC9EAx4BMZipPCX5Rft3ka
+memory: 
+     quota:       unlimited  used:      2.66 KiB  
+
+net bandwidth: 
+     used:               unlimited
+     available:          unlimited
+     limit:              unlimited
+
+cpu bandwidth:
+     used:               unlimited
+     available:          unlimited
+     limit:              unlimited
+	 
+	 
+yt@Ub:~$ cleos get account alice
+created: 2019-02-09T09:37:36.500
+permissions: 
+     owner     1:    1 EOS66r18VWCsEUNBQAHC5qQ97L6HCAhCC9EAx4BMZipPCX5Rft3ka
+        active     1:    1 EOS66r18VWCsEUNBQAHC5qQ97L6HCAhCC9EAx4BMZipPCX5Rft3ka
+memory: 
+     quota:       unlimited  used:      2.66 KiB  
+
+net bandwidth: 
+     used:               unlimited
+     available:          unlimited
+     limit:              unlimited
+
+cpu bandwidth:
+     used:               unlimited
+     available:          unlimited
+     limit:              unlimited
+
+

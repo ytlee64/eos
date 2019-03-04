@@ -1,0 +1,17 @@
+Creating wallet: default
+Save password to use in the future to unlock this wallet.
+Without password imported keys will not be retrievable.
+"PW5J2Z5BR5qu6S1hKq88RUSbF58CVwoWr8Q4ynUCjbXGzSUkwkGYE"
+
+
+yt@Ub:~/eos/biosboot$ cleos wallet create_key
+warn  2019-02-19T15:03:30.395 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/yt/eosio-wallet/./default.wallet
+Created new private key with a public key of: "EOS7xEZUeCaoVDJcaB3xMvjMqbgEb2rdRg6DqhaYjzqC9XUKqUs4P"
+
+Step 6: Import the Development Key
+
+5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+
+yt@Ub:~/eos/biosboot$ cleos wallet import
+private key: warn  2019-02-19T15:04:54.108 thread-0  wallet.cpp:223                save_wallet_file     ] saving wallet to file /home/yt/eosio-wallet/./default.wallet
+imported private key for: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
